@@ -37,3 +37,18 @@ body {
   padding: 15px;
   font-weight: bolder;
 }
+
+#launch:hover {
+  background-color: blueviolet;
+}
+
+#reset {
+  border: 1px solid grey;
+  border-radius: 2px;
+  background-color: beige;
+  color: darkred;
+}
+
+#reset:hover {
+  background-color: white;
+}
