@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaunchR - Try and make it to the moon</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="screen"></canvas>
+  <div class="controls-container">
+    <div>
+      <button id="launch">Launch!</button>
+    </div>
+    <div class="controls">
+      <div>
+        <label for="thrust">Thrust</label>
+        <input type="number" id="thrust" min="1" max="40" value="15"/>
+      </div>
+      <div style="width: 200px">
+        <label for="angle">Launch angle (<span id="read-angle">0</span>&deg;)</label>
+        <br/>
+        <input type="range" id="angle" min="-75" max="75" value="0"/>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

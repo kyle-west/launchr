@@ -1,0 +1,39 @@
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: content-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.controls-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+}
+
+
+#screen {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+#launch {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  padding: 15px;
+  font-weight: bolder;
+}

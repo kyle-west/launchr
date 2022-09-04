@@ -1,0 +1,23 @@
+{
+  "name": "launchr",
+  "version": "0.1.0",
+  "description": "Try and lanch on the moon",
+  "main": "index.js",
+  "scripts": {
+    "start": "PORT=5000 serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle-west/launchr.git"
+  },
+  "author": "kyle-west",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kyle-west/launchr/issues"
+  },
+  "homepage": "https://github.com/kyle-west/launchr#readme",
+  "dependencies": {
+    "serve": "^14.0.1"
+  }
+}
