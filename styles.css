@@ -4,8 +4,9 @@ html, body {
 }
 
 * {
-  box-sizing: content-box;
-  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+  font-family: Consolas, monospace;
+  line-height: 1.3rem;
 }
 
 body {
@@ -13,7 +14,11 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: 100%;
+}
+
+body:not(.overlayOpen) {
+  overflow: hidden;
 }
 
 .controls-container {
@@ -26,10 +31,10 @@ body {
 
 #screen {
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100% - 80px);
 }
 
-#launch {
+#launch, button.accept {
   background-color: blue;
   color: white;
   border: none;
@@ -38,7 +43,11 @@ body {
   font-weight: bolder;
 }
 
-#launch:hover {
+button {
+  cursor: pointer;
+}
+
+#launch:hover, button.accept:hover {
   background-color: blueviolet;
 }
 
@@ -51,4 +60,67 @@ body {
 
 #reset:hover {
   background-color: white;
+}
+
+.scrim {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #333;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  background: cornsilk;
+  padding: 20px 50px;
+  border-radius: 8px;
+  --desired-width: 800px;
+  left: max(10%, calc(50% - calc(var(--desired-width) / 2)));
+  right: max(10%, calc(50% - calc(var(--desired-width) / 2)));
+  top: 10%;
+}
+
+.modal .actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  line-height: initial;
+}
+
+.indent {
+  margin: 32px 0 32px 32px;
+}
+
+/* Borrowed from MDN because I am in a hurry and their docs are open source */
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: .85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

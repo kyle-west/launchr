@@ -1,9 +1,12 @@
 import { Game } from './lib/game.js'
+import { welcomeModal } from './lib/modals.js'
 
-const game = new Game()
+window.game = new Game()
 game.run()
 
 document.getElementById('reset').onclick = ({ target }) => {
   game.reset()
   target.blur()
 }
+
+welcomeModal.open()
