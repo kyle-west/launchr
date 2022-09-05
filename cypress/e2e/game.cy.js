@@ -7,11 +7,24 @@ describe('Welcome Modal', () => {
   it('Has a welcome message with directions', () => {
     cy.get('.modal').should('be.visible')
     cy.get('.modal .content').should('contain', 'OBJECTIVE:')
+    cy.get('.modal .content').should('contain', 'BUDGET:')
     cy.get('.modal .content').should('contain', 'Use your keyboard to control the thrust and angle parameters')
     cy.get('.modal button.accept')
       .should('be.visible')
       .click()
     cy.get('.modal').should('not.exist')
+  })
+})
+
+describe('Share Button', () => {
+  it('Should copy to clipboard as a fallback to mobile share API', () => {
+    cy.get('.modal social-share')
+      .should('be.visible')
+      .click()
+    cy.get('.modal social-share .msg-box').should('be.visible')
+    cy.wait(3100)
+    // message disappears
+    cy.get('.modal social-share .msg-box').should('not.be.visible')
   })
 })
 
@@ -97,8 +110,8 @@ describe('Game', () => {
 
     cy.get('.modal').should('be.visible')
     cy.get('.modal h1').should('have.text', 'You did it!')
-    cy.get('.modal .content').should('contain', 'It took you 2 tries to make it')
-    cy.get('.modal .content').should('contain', 'You spent a total of $1,248,955,119')
+    cy.get('.modal .content').should('contain', 'tries to make it')
+    cy.get('.modal .content').should('contain', 'You spent a total of')
     cy.get('.modal button.accept').click()
     cy.get('.modal').should('not.exist')
 
@@ -150,8 +163,6 @@ describe('Game', () => {
 
     cy.get('.modal').should('be.visible')
     cy.get('.modal h1').should('have.text', 'Not quite there yet...')
-    cy.get('.modal .content').should('contain', 'It took you 25 tries to make it')
-    cy.get('.modal .content').should('contain', 'You spent a total of $3,350,124,811')
     cy.get('.modal .content').should('contain', 'try again')
     cy.get('.modal button.accept').click()
     cy.get('.modal').should('not.exist')
