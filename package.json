@@ -1,7 +1,7 @@
 {
   "name": "launchr",
   "version": "0.1.0",
-  "description": "Try and lanch on the moon",
+  "description": "Try and make it to the Moon",
   "main": "index.js",
   "scripts": {
     "start": "PORT=5000 serve .",
