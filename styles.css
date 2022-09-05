@@ -37,7 +37,7 @@ body:not(.overlayOpen) {
   height: calc(100% - 80px);
 }
 
-#launch, button.accept, button.other {
+#launch, button.accept, button.other, button.share {
   background-color: blue;
   color: white;
   border: none;
@@ -51,6 +51,13 @@ button.other {
 }
 button.other:hover {
   background-color: #b4b4b4;
+}
+
+button.share {
+  background-color: #1071d2;
+}
+button.share:hover {
+  background-color: #208fff;
 }
 
 button.inc {
