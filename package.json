@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "PORT=5000 serve .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test start http://localhost:5000 cy:run"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,9 @@
   "homepage": "https://github.com/kyle-west/launchr#readme",
   "dependencies": {
     "serve": "^14.0.1"
+  },
+  "devDependencies": {
+    "cypress": "^10.7.0",
+    "start-server-and-test": "^1.14.0"
   }
 }
