@@ -7,6 +7,7 @@ describe('Welcome Modal', () => {
   it('Has a welcome message with directions', () => {
     cy.get('.modal').should('be.visible')
     cy.get('.modal .content').should('contain', 'OBJECTIVE:')
+    cy.get('.modal .content').should('contain', 'BUDGET:')
     cy.get('.modal .content').should('contain', 'Use your keyboard to control the thrust and angle parameters')
     cy.get('.modal button.accept')
       .should('be.visible')
