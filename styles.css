@@ -94,6 +94,15 @@ button {
   background-color: white;
 }
 
+.stats {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  color: white;
+  pointer-events: none;
+}
+
 
 .modalWrapper {
   z-index: 1;
@@ -123,6 +132,23 @@ button {
   top: 10%;
 }
 
+.indent {
+  margin: 32px 0 32px 32px;
+}
+
+@media screen and (max-width: 500px) {
+  .modal {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    padding: 5% 10%;
+  }
+
+  .indent {
+    margin: 0;
+  }
+}
+
 .modal .actions {
   display: flex;
   justify-content: space-around;
@@ -132,10 +158,6 @@ h1 {
   margin: 0;
   padding: 0;
   line-height: initial;
-}
-
-.indent {
-  margin: 32px 0 32px 32px;
 }
 
 /* Borrowed from MDN because I am in a hurry and their docs are open source */

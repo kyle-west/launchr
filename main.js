@@ -4,8 +4,6 @@ import { welcomeModal } from './lib/modals.js'
 window.game = new Game()
 game.run()
 
-document.getElementById('reset').onclick = ({ target }) => {
-  game.reset()
-}
+document.getElementById('reset').onclick = () => game.reset()
 
 welcomeModal.open()
